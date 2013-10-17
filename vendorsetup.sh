@@ -15,4 +15,4 @@
 #
 
 add_lunch_combo aosp_flo-userdebug
-add_lunch_combo custom_flo-userdebug
+add_lunch_combo omni_flo-userdebug
