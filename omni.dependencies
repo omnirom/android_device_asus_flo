@@ -4,11 +4,5 @@
     "repository":   "android_kernel_google_msm",
     "target_path":  "kernel/google/msm",
     "revision":     "android-msm-flo-3.4-jb-mr2"
-  },
-  {
-    "remote":       "github",
-    "repository":   "DonkeyCoyote/proprietary_vendor_asus",
-    "target_path":  "vendor/asus",
-    "revision":     "android-4.3"
   }
 ]
