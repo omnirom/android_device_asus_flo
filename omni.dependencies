@@ -2,7 +2,7 @@
   {
     "remote":       "omnirom",
     "repository":   "android_kernel_google_msm",
-    "target_path":  "kernel/google/msm",
+    "target_path":  "kernel/asus/flo",
     "revision":     "android-msm-flo-3.4-jb-mr2"
   }
 ]
