@@ -14,6 +14,3 @@
 # limitations under the License.
 #
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-TARGET_PREBUILT_KERNEL := device/asus/flo-kernel/kernel
-endif
