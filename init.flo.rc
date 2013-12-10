@@ -26,9 +26,13 @@ on init
     mkdir /mnt/shell/emulated 0700 shell shell
     mkdir /storage/emulated 0555 root root
 
+    mkdir /mnt/media_rw/usbdisk 0700 media_rw media_rw
+    mkdir /storage/usbdisk 0700 root root
+
     export EXTERNAL_STORAGE /storage/emulated/legacy
     export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
     export EMULATED_STORAGE_TARGET /storage/emulated
+    export SECONDARY_STORAGE /storage/usbdisk
 
     # Support legacy paths
     symlink /storage/emulated/legacy /sdcard
@@ -433,6 +437,10 @@ service thermald /system/bin/thermald
 
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     class main
+
+service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usbdisk /storage/usbdisk
+    class late_start
+    disabled
 
 service ppd /system/bin/mm-pp-daemon
     class late_start
