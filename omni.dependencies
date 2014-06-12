@@ -3,6 +3,6 @@
     "remote":       "omnirom",
     "repository":   "android_kernel_google_msm",
     "target_path":  "kernel/asus/flo",
-    "revision":     "android-msm-flo-3.4-kitkat-mr0"
+    "revision":     "android-msm-flo-3.4-kitkat-mr2"
   }
 ]
