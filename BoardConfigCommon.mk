@@ -69,7 +69,7 @@ TARGET_USES_SF_BYPASS := true
 TARGET_USES_C2D_COMPOSITON := true
 
 TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
-TARGET_RECOVERY_UI_LIB := librecovery_ui_flo
+#TARGET_RECOVERY_UI_LIB := librecovery_ui_flo
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
