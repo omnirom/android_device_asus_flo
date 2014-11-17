@@ -33,6 +33,7 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 
 # Kernel inline build
 TARGET_KERNEL_SOURCE := kernel/asus/flo
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
 TARGET_KERNEL_CONFIG := flo_defconfig 
 TARGET_VARIANT_CONFIG := flo_defconfig
 TARGET_SELINUX_CONFIG := flo_defconfig
