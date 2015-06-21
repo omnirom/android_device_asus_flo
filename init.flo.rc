@@ -25,7 +25,6 @@ on early-init
 on init
     symlink /sdcard /storage/sdcard0
 
-on init
     # Set permissions for persist partition
     mkdir /persist 0771 system system
     mkdir /firmware 0771 system system
