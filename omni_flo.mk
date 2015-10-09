@@ -33,7 +33,7 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 
 # Kernel inline build
 TARGET_KERNEL_SOURCE := kernel/asus/flo
-KERNEL_TOOLCHAIN := "$(ANDROID_BUILD_TOP)/prebuilts/gcc/$(strip $(HOST_OS))-x86/arm/arm-eabi-4.7/bin/"
+#KERNEL_TOOLCHAIN := "$(ANDROID_BUILD_TOP)/prebuilts/gcc/$(strip $(HOST_OS))-x86/arm/arm-eabi-4.7/bin/"
 TARGET_KERNEL_CONFIG := flo_defconfig 
 TARGET_VARIANT_CONFIG := flo_defconfig
 TARGET_SELINUX_CONFIG := flo_defconfig
