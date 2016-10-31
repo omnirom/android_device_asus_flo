@@ -12,4 +12,7 @@ allow cameraserver cameraserver:fd use;
 unix_socket_send(cameraserver, mpdecision, mpdecision)
 
 # Allow access to sysfs
-allow cameraserver sysfs:file { getattr read open };
+allow cameraserver sysfs:file r_file_perms;
+
+# for libmmjpeg
+allow cameraserver system_file:file execmod;
