@@ -372,7 +372,8 @@ service thermald /system/bin/thermald
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     class main
     user root
-    group root system
+    group root readproc system
+    disabled
 
 service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usbdisk /storage/usbdisk
     class late_start
