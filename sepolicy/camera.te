@@ -19,6 +19,7 @@ type_transition camera system_data_file:sock_file camera_socket "cam_socket1";
 allow camera camera_socket:sock_file { create unlink };
 allow camera system_data_file:dir w_dir_perms;
 allow camera system_data_file:sock_file unlink;
+allow camera system_data_file:sock_file create;
 
 type_transition camera system_data_file:file camera_data_file "fdAlbum";
 allow camera camera_data_file:file create_file_perms;

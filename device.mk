@@ -40,3 +40,7 @@ $(call inherit-product, device/asus/flo/device-common.mk)
 $(call inherit-product-if-exists, vendor/asus/flo/flo-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS := device/asus/flo/overlay
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.legacyencoder=true \
+    media.stagefright.less-secure=true
