@@ -1,0 +1,3 @@
+# allow access to system app for radio files
+allow system_app radio_data_file:dir rw_dir_perms;
+allow system_app radio_data_file:file create_file_perms;
