@@ -21,7 +21,11 @@
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
-PRODUCT_NAME := aosp_flo
+
+# Inherit from our custom product configuration 
+$(call inherit-product, vendor/omni/config/common_tablet.mk)
+
+PRODUCT_NAME := omni_flo
 PRODUCT_DEVICE := flo
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := Nexus 7
@@ -33,5 +37,5 @@ PRODUCT_PACKAGES += \
 
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/asus/flo/device.mk)
-$(call inherit-product-if-exists, vendor/asus/flo/device-vendor.mk)
+$(call inherit-product, vendor/asus/flo/flo-vendor.mk)
 #$(call inherit-product-if-exists, vendor/qcom/proprietary/common/config/device-vendor.mk)
