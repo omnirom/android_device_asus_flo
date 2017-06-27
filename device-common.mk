@@ -151,6 +151,10 @@ PRODUCT_PACKAGES += \
 	librs_jni \
 	com.android.future.usb.accessory
 
+#Camera
+PRODUCT_PACKAGES += \
+        SnapdragonCamera
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
 	e2fsck \
