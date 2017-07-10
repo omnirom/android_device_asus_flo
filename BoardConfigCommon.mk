@@ -30,7 +30,7 @@ BOARD_KERNEL_CMDLINE += vmalloc=340M
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 TARGET_KERNEL_SOURCE := kernel/asus/flo
 TARGET_KERNEL_CONFIG := flo_defconfig
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androidkernel-
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
