@@ -236,6 +236,9 @@ on post-fs-data
     write /sys/devices/system/cpu/cpu3/online 1
     write /dev/cpuctl/apps/cpu.notify_on_migrate 1
 
+on property:sys.boot_completed=1
+    setprop sys.io.scheduler bfq
+
 on charger
     # Enable Power modes and set the CPU Freq Sampling rates
     write /sys/module/rpm_resources/enable_low_power/L2_cache 1
@@ -373,18 +376,6 @@ service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     class main
     user root
     group root readproc system
-    disabled
-
-service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usbdisk /storage/usbdisk
-    class late_start
-    disabled
-
-service ppd /system/bin/mm-pp-daemon
-    class late_start
-    disabled
-    user system
-    socket pps stream 0660 system system graphics
-    group system graphics
 
 service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start

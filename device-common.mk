@@ -19,7 +19,6 @@
 #
 # Everything in this directory will become public
 
-
 # This device is xhdpi.  However the platform doesn't
 # currently contain all of the bitmaps at xhdpi density so
 # we do this little trick to fall back to the hdpi version
@@ -38,11 +37,10 @@ PRODUCT_PACKAGES += \
 	lights.msm8960
 
 PRODUCT_PACKAGES += \
-    charger_res_images
+    omni_charger_res_images
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
-        LiveWallpapers \
         LiveWallpapersPicker \
         librs_jni
 
@@ -154,6 +152,10 @@ PRODUCT_PACKAGES += \
 	librs_jni \
 	com.android.future.usb.accessory
 
+#Camera
+PRODUCT_PACKAGES += \
+        SnapdragonCamera
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
 	e2fsck \
@@ -242,8 +244,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	drm.service.enabled=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	wifi.interface=wlan0 \
-	wifi.supplicant_scan_interval=15
+	wifi.interface=wlan0
 
 # Enable AAC 5.1 output
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -255,11 +256,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
         ro.qc.sensors.wl_dis=true \
         ro.qualcomm.sensors.smd=true
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.qualcomm.cabl=1 \
-	hw.cabl.level=Auto \
-	persist.qcom.cabl.video_only=1
 
 # Configure libhwui
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -293,8 +289,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
     device/asus/flo/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     device/asus/flo/nfc/libnfc-brcm-20791b05.conf:system/etc/libnfc-brcm-20791b05.conf
-
-PRODUCT_LOCALES := en_US es_US de_DE zh_CN
 
 $(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-heap.mk)
 $(call inherit-product, hardware/qcom/msm8960/msm8960.mk)

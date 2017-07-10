@@ -2,6 +2,8 @@
 type camera, domain, domain_deprecated;
 
 # Qualcomm MSM camera
+
+type camera, domain, domain_deprecated;
 type camera_exec, exec_type, file_type;
 
 # Started by init
@@ -11,7 +13,7 @@ init_daemon_domain(camera)
 # Interact with other media devices
 allow camera video_device:dir search;
 allow camera { gpu_device video_device }:chr_file rw_file_perms;
-allow camera { surfaceflinger mediaserver }:fd use;
+allow camera { surfaceflinger mediaserver cameraserver }:fd use;
 
 # Create front and back camera sockets (/data/cam_socket[01])
 type_transition camera system_data_file:sock_file camera_socket "cam_socket0";
@@ -29,19 +31,24 @@ allow camera gpu_device:chr_file { read write open ioctl };
 unix_socket_connect(camera, sensors, sensors)
 allow camera sensors_socket:sock_file read;
 
+# Read camera files from persist filesystem
+allow camera persist_file:dir search;
+r_dir_file(camera, persist_camera_file)
 
-# allow camera system_file:file execmod;
+allow camera system_file:file execmod;
 allow camera cameraserver:fd { use };
 
 # Interact with ion
-allow camera ion_device:chr_file rw_file_perms;
+allow camera ion_device:chr_file { getattr ioctl read write open };
 
 # Interact with sysfs
 allow camera sysfs:file { getattr read write open };
 
 # Interact with /data
-allow camera apk_data_file:dir rw_dir_perms;
-allow camera storage_file:dir rw_dir_perms;
-allow camera mnt_user_file:dir rw_dir_perms;
+allow camera apk_data_file:dir { getattr read write open search };
+allow camera storage_file:dir { getattr read write open search };
 allow camera storage_file:lnk_file { getattr read write open };
-allow camera fuse:dir rw_dir_perms;
+allow camera mnt_user_file:dir { getattr read write open search };
+allow camera mnt_user_file:lnk_file { getattr read write open };
+allow camera fuse:dir { getattr read write open search };
+
