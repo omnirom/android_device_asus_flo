@@ -25,12 +25,12 @@ TARGET_NO_BOOTLOADER := false
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
 # BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=msm8960 maxcpus=2
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=flo user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=flo user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3
 BOARD_KERNEL_CMDLINE += vmalloc=340M
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 TARGET_KERNEL_SOURCE := kernel/asus/flo
 TARGET_KERNEL_CONFIG := flo_defconfig
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androidkernel-
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
@@ -67,9 +67,6 @@ TARGET_USES_ION := true
 TARGET_USES_OVERLAY := true
 TARGET_USES_SF_BYPASS := true
 TARGET_USES_C2D_COMPOSITON := true
-
-TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
-#TARGET_RECOVERY_UI_LIB := librecovery_ui_flo
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
@@ -115,8 +112,7 @@ TARGET_CUSTOM_DISPLAY_TUNING := true
 USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
-USE_DEVICE_SPECIFIC_CAMERA := true
-TARGET_NEEDS_PLATFORM_TEXTRELS := true
+USE_DEVICE_SPECIFIC_CAMERA:= true
 
 HAVE_ADRENO_SOURCE:= false
 
@@ -127,6 +123,8 @@ USE_MINIKIN := true
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
+
+TARGET_NEEDS_PLATFORM_TEXTRELS := true
 
 #TWRP config:
 DEVICE_RESOLUTION := 1080x1920

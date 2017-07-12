@@ -1,8 +1,0 @@
-[
-  {
-    "remote":       "omnirom",
-    "repository":   "android_kernel_asus_flo",
-    "target_path":  "kernel/asus/flo",
-    "revision":     "android-7.1"
-  }
-]
